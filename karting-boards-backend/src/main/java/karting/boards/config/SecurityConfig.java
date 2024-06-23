@@ -10,8 +10,8 @@ import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
 import java.util.List;
 
-import karting.boards.database.user.dto.UserDto;
-import karting.boards.database.user.sql.UserSqlService;
+import karting.boards.database.user.dto.DriverDto;
+import karting.boards.database.user.sql.DriverSqlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -55,18 +55,18 @@ public class SecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-    @Bean
-    public UserDetailsService user(UserSqlService userSqlService) {
-        return (username) -> {
-            UserDto userDto = userSqlService.getUserByEmail(username);
-            if (userDto == null)
-                throw new UsernameNotFoundException("email not found");
-            return User.withUsername(userDto.email())
-                            .password(userDto.password())
-                            .authorities("read")
-                            .build();
-        };
-    }
+//    @Bean
+//    public UserDetailsService user(DriverSqlService driverSqlService) {
+//        return (username) -> {
+//            DriverDto driverDto = driverSqlService.getUserByEmail(username);
+//            if (driverDto == null)
+//                throw new UsernameNotFoundException("email not found");
+//            return User.withUsername(driverDto.email())
+//                            .password(driverDto.password())
+//                            .authorities("read")
+//                            .build();
+//        };
+//    }
 
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {

@@ -1,11 +1,12 @@
 package karting.boards.controller;
 
+import jakarta.validation.Valid;
 import karting.boards.common.ResponseDto;
-import karting.boards.common.dto.ContentDto;
 //import karting.boards.database.car.CarDto;
 //import karting.boards.database.reservations.dto.ReservationDto;
 //import karting.boards.database.user.dto.PasswordDto;
-import karting.boards.database.user.dto.UserDto;
+import karting.boards.database.user.dto.RegisterDriverDto;
+import karting.boards.database.user.dto.DriverDto;
 //import karting.boards.service.CarService;
 //import karting.boards.service.EmailService;
 //import karting.boards.service.ReservationService;
@@ -35,10 +36,12 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<ResponseDto> registerUser(@RequestBody UserDto userDto) {
-        UserDto user = userService.registerUser(
+    public ResponseEntity<ResponseDto> registerUser(@RequestBody @Valid RegisterDriverDto userDto) {
+       userService.registerUser(
                 userDto.firstName(),
                 userDto.lastName(),
+                userDto.nickname(),
+                userDto.sex(),
                 userDto.email(),
                 userDto.password(),
                 userDto.role());
@@ -79,15 +82,15 @@ public class UserController {
 //        return ResponseEntity.ok().build();
 //    }
 
-    @GetMapping("/user")
-    public UserDto getLoggedUser(Principal principal) {
-        return userService.getUserByEmail(principal.getName());
-    }
-
-    @GetMapping("/email")
-    public int getUserCountByEmail(@RequestParam("email") String email) {
-        return userService.getUserCountByEmail(email);
-    }
+//    @GetMapping("/user")
+//    public DriverDto getLoggedUser(Principal principal) {
+//        return userService.getUserByEmail(principal.getName());
+//    }
+//
+//    @GetMapping("/email")
+//    public int getUserCountByEmail(@RequestParam("email") String email) {
+//        return userService.getUserCountByEmail(email);
+//    }
 
 //    @GetMapping("/{userId}/cars")
 //    public ContentDto<CarDto> getUserCars(@PathVariable("userId") String userId) {

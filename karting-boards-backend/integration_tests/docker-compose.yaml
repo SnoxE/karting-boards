@@ -10,8 +10,8 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - kbdata:/var/lib/postgresql/data
 
 volumes:
-  pgdata:
+  kbdata:
     external: true
