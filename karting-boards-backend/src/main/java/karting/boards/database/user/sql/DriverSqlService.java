@@ -2,15 +2,15 @@ package karting.boards.database.user.sql;
 
 import static karting.boards.common.resource.ResourceManager.readSqlQuery;
 
-import java.sql.Connection;
-import java.sql.JDBCType;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.Map;
 
 import karting.boards.common.exceptions.DgAuthException;
+import karting.boards.database.user.dto.DriverDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,7 +25,7 @@ public class DriverSqlService {
     private static final String INSERT_INTO_DRIVER = readSqlQuery("sql/insert/insert_into_driver.sql");
     private static final String SELECT_COUNT_BY_EMAIL =
             readSqlQuery("sql/select/user/select_user_count_by_email.sql");
-    private static final String SELECT_USER_BY_ID = readSqlQuery("sql/select/user/select_user_by_id.sql");
+    private static final String SELECT_USER_BY_ID = readSqlQuery("sql/select/user/select_driver_by_id.sql");
     private static final String SELECT_USER_BY_EMAIL =
             readSqlQuery("sql/select/user/select_user_by_email.sql");
     private static final String SELECT_USER_BY_EMAIL_AND_PASSWORD =
@@ -138,9 +138,10 @@ public class DriverSqlService {
 //                password);
 //    }
 
-//    public Integer getCountByEmail(String email) {
-//        return jdbcOperations.queryForObject(SELECT_COUNT_BY_EMAIL, Integer.class, email);
-//    }
+    public Integer getCountByEmail(String email) {
+        MapSqlParameterSource parameters = new MapSqlParameterSource().addValue("email", email);
+        return jdbcOperations.queryForObject(SELECT_COUNT_BY_EMAIL, parameters, Integer.class);
+    }
 
 //    public void changePassword(int userId, String password) throws ResponseStatusException {
 //        try {
@@ -158,7 +159,9 @@ public class DriverSqlService {
 //    }
 
 //    public DriverDto getUserByEmail(String email) {
-//        return jdbcOperations.queryForObject(SELECT_USER_BY_EMAIL, userRowMapper, email);
+//        MapSqlParameterSource parameters = new MapSqlParameterSource().addValue("email", email);
+//        return jdbcOperations.queryForObject(SELECT_USER_BY_EMAIL, parameters, new RowMapper(DriverDto.class) {
+//        });
 //    }
 
 //    public String getPasswordByUserId(int userId) {

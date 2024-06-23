@@ -35,8 +35,8 @@ public class UserService {
                 throw new DgAuthException("Niepoprawny format adresu email");
         }
 
-//        Integer count = driverSqlService.getCountByEmail(email);
-//        if (count > 0) throw new DgAuthException("Adres email jest już w użyciu");
+        Integer count = driverSqlService.getCountByEmail(email);
+        if (count > 0) throw new DgAuthException("Adres email jest już w użyciu");
 
         driverSqlService.createUser(firstName, lastName, nickname, sex, email, password, role);
 

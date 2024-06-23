@@ -14,3 +14,5 @@ from
     left join session ON laptime.session_id = session.id
     left join driver ON laptime.driver_id = driver.id
 order by
+    laptime.time;
+

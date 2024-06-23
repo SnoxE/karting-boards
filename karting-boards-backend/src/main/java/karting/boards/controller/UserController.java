@@ -37,7 +37,7 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<ResponseDto> registerUser(@RequestBody @Valid RegisterDriverDto userDto) {
-       userService.registerUser(
+        userService.registerUser(
                 userDto.firstName(),
                 userDto.lastName(),
                 userDto.nickname(),

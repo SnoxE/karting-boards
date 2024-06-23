@@ -1,7 +1,7 @@
 SELECT
     COUNT(*)
 FROM
-    USERS
+    DRIVER
 WHERE
-    email = ?;
+    email = :email;
 
