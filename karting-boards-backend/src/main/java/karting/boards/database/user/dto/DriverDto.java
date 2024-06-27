@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record DriverDto(
         @JsonProperty("id") int id,
-        @JsonProperty("first_name")  String firstName,
-        @JsonProperty("last_name") String lastName,
+        @JsonProperty("firstname")  String firstName,
+        @JsonProperty("lastname") String lastName,
         @JsonProperty("nickname") String nickname,
-        @JsonProperty("M") String sex,
+        @JsonProperty("sex") String sex,
         @JsonProperty("email") String email,
         @JsonProperty("password") String password,
         @JsonProperty("role") String role) {}
