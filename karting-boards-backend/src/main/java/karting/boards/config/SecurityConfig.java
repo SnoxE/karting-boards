@@ -71,6 +71,7 @@ public class SecurityConfig {
         .authorizeHttpRequests(
             auth ->
                 auth.requestMatchers(
+                        "/api/session",
                         "/api/token",
                         "/api/tracks",
                         "/api/tracks/{trackId}/leaderboard",
