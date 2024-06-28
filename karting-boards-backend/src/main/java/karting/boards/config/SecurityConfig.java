@@ -73,6 +73,7 @@ public class SecurityConfig {
                 auth.requestMatchers(
                         "/api/token",
                         "/api/tracks",
+                        "/api/tracks/{trackId}/leaderboard",
                         "/api/users/register",
                         "/api/users/email",
                         "/api/services/**",

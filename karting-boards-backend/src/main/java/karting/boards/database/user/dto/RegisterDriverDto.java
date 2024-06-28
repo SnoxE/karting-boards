@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public record RegisterDriverDto(
+        @JsonProperty("id") @NotNull @Size(max=100) String id,
         @JsonProperty("firstname") @NotNull @Size(max=30) String firstName,
         @JsonProperty("lastname") @Size(max=30) String lastName,
         @JsonProperty("nickname") @Size(max=30) String nickname,

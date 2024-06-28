@@ -3,7 +3,7 @@ package karting.boards.database.track.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record TrackDto(
-    @JsonProperty("id") Integer id,
+    @JsonProperty("id") String id,
     @JsonProperty("name") String name,
     @JsonProperty("street") String street,
     @JsonProperty("streetNo") Integer streetNo,

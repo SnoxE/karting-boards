@@ -77,6 +77,7 @@ public class DriverSqlService {
   }
 
   public Integer createUser(
+      String id,
       String firstName,
       String lastName,
       String nickname,
@@ -87,7 +88,15 @@ public class DriverSqlService {
 
     MapSqlParameterSource parameters =
         insertUserParameterSource(
-            new MapSqlParameterSource(), firstName, lastName, nickname, sex, email, password, role);
+            new MapSqlParameterSource(),
+            id,
+            firstName,
+            lastName,
+            nickname,
+            sex,
+            email,
+            password,
+            role);
     try {
       return jdbcOperations.update(INSERT_INTO_DRIVER, parameters);
     } catch (Exception e) {
@@ -97,6 +106,7 @@ public class DriverSqlService {
 
   public MapSqlParameterSource insertUserParameterSource(
       MapSqlParameterSource parameterSource,
+      String id,
       String firstName,
       String lastName,
       String nickname,
@@ -104,6 +114,7 @@ public class DriverSqlService {
       String email,
       String password,
       String role) {
+    parameterSource.addValue("id", id);
     parameterSource.addValue("first_name", firstName);
     parameterSource.addValue("last_name", lastName);
     parameterSource.addValue("nickname", nickname);

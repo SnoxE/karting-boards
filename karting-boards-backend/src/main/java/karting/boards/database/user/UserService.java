@@ -19,7 +19,6 @@ public class UserService {
     this.driverSqlService = driverSqlService;
   }
 
-
   public RegisterDriverDto registerDriver(RegisterDriverDto driverDto) {
 
     Pattern pattern = Pattern.compile("^(.+)@(.+)$");
@@ -32,6 +31,7 @@ public class UserService {
     if (count > 0) throw new DuplicateKeyErrorProblem();
 
     driverSqlService.createUser(
+        driverDto.id(),
         driverDto.firstName(),
         driverDto.lastName(),
         driverDto.nickname(),
@@ -59,6 +59,5 @@ public class UserService {
   //    {
   //        return driverSqlService.getCountByEmail(email);
   //    }
-
 
 }
