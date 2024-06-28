@@ -4,7 +4,7 @@ public record TrackSqlRow(
     String id,
     String name,
     String street,
-    Integer streetNo,
+    String streetNo,
     String city,
     String postCode,
     Integer configuration,

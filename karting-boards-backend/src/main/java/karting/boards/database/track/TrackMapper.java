@@ -15,4 +15,16 @@ public final class TrackMapper {
         trackSqlRow.configuration(),
         trackSqlRow.configuration());
   }
+
+  public static TrackDto toTrackDto(
+      String id,
+      String name,
+      String street,
+      String streetNo,
+      String city,
+      String postCode,
+      Integer configuration,
+      Integer length) {
+    return new TrackDto(id, name, street, streetNo, city, postCode, configuration, length);
+  }
 }

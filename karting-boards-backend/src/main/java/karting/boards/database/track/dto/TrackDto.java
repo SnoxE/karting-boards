@@ -6,7 +6,7 @@ public record TrackDto(
     @JsonProperty("id") String id,
     @JsonProperty("name") String name,
     @JsonProperty("street") String street,
-    @JsonProperty("streetNo") Integer streetNo,
+    @JsonProperty("streetNo") String streetNo,
     @JsonProperty("city") String city,
     @JsonProperty("postCode") String postCode,
     @JsonProperty("configuration") Integer configuration,

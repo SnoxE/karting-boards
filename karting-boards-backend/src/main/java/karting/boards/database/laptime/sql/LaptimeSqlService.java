@@ -27,7 +27,7 @@ public class LaptimeSqlService {
     this.jdbcOperations = jdbcOperations;
   }
 
-  public List<LaptimeSqlRow> getBestLapTimes(String trackId) {
+  public List<LaptimeSqlRow> getLeaderboard(String trackId) {
     MapSqlParameterSource parameters = new MapSqlParameterSource().addValue("trackId", trackId);
 
     try {
