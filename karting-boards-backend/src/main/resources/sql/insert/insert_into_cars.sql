@@ -1,3 +1,0 @@
-INSERT INTO CARS (USER_ID, MAKE, MODEL, PRODUCTION_YEAR, SIZE, COLOUR)
-    VALUES (?, ?, ?, ?, ?::car_size, ?);
-

@@ -1,7 +1,7 @@
 package karting.boards.database.user;
 
+import karting.boards.common.ShortUuidGenerator;
 import karting.boards.common.problem.DuplicateKeyErrorProblem;
-import karting.boards.common.problem.NotFoundProblem;
 import karting.boards.database.user.dto.DriverDto;
 import karting.boards.database.user.dto.RegisterDriverDto;
 import karting.boards.database.user.problem.EmailAddressNotFoundProblem;
@@ -28,15 +28,16 @@ public class DriverService {
 
         Pattern pattern = Pattern.compile("^(.+)@(.+)$");
         if (driverDto.email() != null) {
-            if (!pattern.matcher(driverDto.email().toLowerCase()).matches())
-                throw new InvalidEmailAddressProblem();
+            if (!pattern.matcher(driverDto.email().toLowerCase()).matches()) throw new InvalidEmailAddressProblem();
         }
 
         Integer count = driverSqlService.getCountByEmail(driverDto.email().toLowerCase());
         if (count > 0) throw new DuplicateKeyErrorProblem();
 
+        String id = String.format("%s.%s.%s", driverDto.firstName(), ShortUuidGenerator.generateRandomString(4), "id");
+
         driverSqlService.createUser(
-                driverDto.id(),
+                id,
                 driverDto.firstName(),
                 driverDto.lastName(),
                 driverDto.nickname(),

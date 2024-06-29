@@ -75,14 +75,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         auth ->
                                 auth.requestMatchers(
-                                                "/api/laptime",
-                                                "/api/session",
                                                 "/api/token",
                                                 "/api/tracks",
                                                 "/api/tracks/{trackId}/leaderboard",
-                                                "/api/users/email",
                                                 "/api/users/register",
-                                                "/api/users/user",
                                                 "/api/services/**",
                                                 "/swagger-ui/**",
                                                 "/v3/**")

@@ -3,7 +3,7 @@ package karting.boards.database.user.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record DriverDto(
-        @JsonProperty("id") int id,
+        @JsonProperty("id") String id,
         @JsonProperty("firstname")  String firstName,
         @JsonProperty("lastname") String lastName,
         @JsonProperty("nickname") String nickname,

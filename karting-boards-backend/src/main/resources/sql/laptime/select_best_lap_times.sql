@@ -22,5 +22,7 @@ where
 order by
     laptime_minutes,
     laptime_seconds,
-    laptime_milliseconds;
+    laptime_milliseconds
+LIMIT
+    10;
 

@@ -9,8 +9,6 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
-import java.time.Duration;
 import java.util.List;
 
 import static karting.boards.common.resource.ResourceManager.readSqlQuery;
@@ -59,8 +57,6 @@ public class LapTimeSqlService {
         } catch (DataAccessException e) {
             log.error("Unable to add lap time due to an unexpected error message={}", e.getMessage(), e);
             throw new InternalServerErrorProblem();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
