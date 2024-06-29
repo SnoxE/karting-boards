@@ -6,4 +6,5 @@ public record DriverSqlRow(
         String lastName,
         String email,
         String password,
-        String role) {}
+        String role) {
+}
