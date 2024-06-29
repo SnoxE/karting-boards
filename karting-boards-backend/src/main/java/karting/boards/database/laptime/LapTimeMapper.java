@@ -1,12 +1,12 @@
 package karting.boards.database.laptime;
 
-import karting.boards.database.laptime.dto.LaptimeDto;
-import karting.boards.database.laptime.sql.LaptimeSqlRow;
+import karting.boards.database.laptime.dto.LapTimeDto;
+import karting.boards.database.laptime.sql.LapTimeSqlRow;
 
-public class LaptimeMapper {
+public class LapTimeMapper {
 
-  public static LaptimeDto toLaptimeDto(LaptimeSqlRow laptimeSqlRow) {
-    return new LaptimeDto(
+  public static LapTimeDto toLaptimeDto(LapTimeSqlRow laptimeSqlRow) {
+    return new LapTimeDto(
         laptimeSqlRow.laptimeId(),
         laptimeSqlRow.laptimeMinutes(),
         laptimeSqlRow.laptimeSeconds(),

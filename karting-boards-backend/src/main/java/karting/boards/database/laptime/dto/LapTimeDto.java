@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.sql.Date;
 import java.sql.Time;
 
-public record LaptimeDto(
+public record LapTimeDto(
         @JsonProperty("laptimeId") String laptimeId,
         @JsonProperty("laptimeMinutes") Integer laptimeMinutes,
         @JsonProperty("laptimeSeconds") Integer laptimeSeconds,

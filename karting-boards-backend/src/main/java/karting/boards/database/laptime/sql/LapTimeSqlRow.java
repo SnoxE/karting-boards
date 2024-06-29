@@ -3,7 +3,7 @@ package karting.boards.database.laptime.sql;
 import java.sql.Date;
 import java.sql.Time;
 
-public record LaptimeSqlRow(
+public record LapTimeSqlRow(
     String laptimeId,
     Integer laptimeMinutes,
     Integer laptimeSeconds,

@@ -2,8 +2,8 @@ package karting.boards.controller;
 
 import jakarta.validation.Valid;
 import karting.boards.common.dto.ContentDto;
-import karting.boards.database.laptime.LaptimeService;
-import karting.boards.database.laptime.dto.LaptimeDto;
+import karting.boards.database.laptime.LapTimeService;
+import karting.boards.database.laptime.dto.LapTimeDto;
 import karting.boards.database.track.TrackService;
 import karting.boards.database.track.dto.NewTrackDto;
 import karting.boards.database.track.dto.TrackDto;
@@ -24,9 +24,9 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class TrackController {
 
   TrackService trackService;
-  LaptimeService laptimeService;
+  LapTimeService laptimeService;
 
-  public TrackController(TrackService trackService, LaptimeService laptimeService) {
+  public TrackController(TrackService trackService, LapTimeService laptimeService) {
     this.trackService = trackService;
     this.laptimeService = laptimeService;
   }
@@ -37,7 +37,7 @@ public class TrackController {
   }
 
   @GetMapping(path = "/{trackId}/leaderboard", produces = APPLICATION_JSON_VALUE)
-  public ContentDto<LaptimeDto> getLeaderboard(@PathVariable String trackId) {
+  public ContentDto<LapTimeDto> getLeaderboard(@PathVariable String trackId) {
     return laptimeService.getLeaderboard(trackId);
   }
 

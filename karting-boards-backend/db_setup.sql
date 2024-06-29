@@ -52,6 +52,6 @@ insert into session (id, track_id, date, time)
 values ('wrt.karting.13-06-2024', 'wrt.karting', '2024-06-13', '15:00:00');
 
 insert into laptime (id, track_id, session_id, driver_id, time)
-values ('wrt.karting.13-06-2024.ef8026aa3f9a44f99a1afbb7dd42dd1b', 'wrt.karting', 'wrt.karting.13-06-2024',
+values ('wrt.karting.13-06-2024.15_20_00.snoxe.id', 'wrt.karting', 'wrt.karting.13-06-2024',
         'snoxe.id', '00:26.443')
 
