@@ -44,7 +44,7 @@ public class DriverService {
                 driverDto.sex(),
                 driverDto.email(),
                 driverDto.password(),
-                driverDto.role());
+                driverDto.role() != null ? driverDto.role() : "user");
 
         return driverDto;
     }

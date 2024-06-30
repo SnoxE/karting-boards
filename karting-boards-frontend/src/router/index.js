@@ -3,9 +3,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
 import LeaderBoardView from '@/views/LeaderBoardView.vue'
+import AddLapTimeView from '@/views/AddLapTimeView.vue'
+import RegisterView from '@/views/RegisterView.vue'
 
 
 import { useAuthStore } from '@/stores/auth'
+
 
 
 const router = createRouter({
@@ -22,15 +25,20 @@ const router = createRouter({
       component: LoginView
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
-    },
-    {
       path: '/tracks/:id/leaderboard',
       name: 'track-leaderboard',
       component: LeaderBoardView
-    }
+    },
+    {
+      path: '/laptime',
+      name: 'add-laptime',
+      component: AddLapTimeView
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterView
+    },
   ]
 })
 

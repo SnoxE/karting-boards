@@ -1,9 +1,12 @@
 package karting.boards.database.session;
 
+import karting.boards.common.dto.ContentDto;
 import karting.boards.database.session.dto.NewSessionDto;
 import karting.boards.database.session.dto.SessionDto;
 import karting.boards.database.session.sql.SessionSqlService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SessionService {
@@ -25,5 +28,9 @@ public class SessionService {
 
     return SessionMapper.toSessionDto(
         sessionId, newSessionDto.trackId(), newSessionDto.date(), newSessionDto.time());
+  }
+
+  public ContentDto<SessionDto> getSessionsByTrackId(String trackId) {
+    return new ContentDto<>(sessionSqlService.getSessionsByTrackId(trackId).stream().map(SessionMapper::toSessionDto).toList());
   }
 }

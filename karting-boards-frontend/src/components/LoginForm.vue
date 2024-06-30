@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center text-white">
     <div class="mx-auto mt-10 flex pt-6 text-2xl">
-      <span>Witaj ponownie</span>
+      <span>Welcoma back!</span>
     </div>
     <form class="login-form z-2 mx-auto flex w-80 flex-col p-6" @submit.prevent="onSubmit">
       <div class="mx-auto my-2 flex w-full flex-col gap-4">
@@ -28,15 +28,15 @@
         type="submit"
         class="submit-btn mx-auto mt-6 w-full rounded-lg bg-gray-500 p-2 hover:bg-mcl-orange"
       >
-        Zaloguj
+        Log In
       </button>
     </form>
     <div class="mx-auto flex">
-      <span class="p-1 text-sm">Nie masz konta?</span>
+      <span class="p-1 text-sm">Don't have an account yet?</span>
       <router-link
-        to="/rejestracja"
+        to="/register"
         class="p-1 text-sm underline underline-offset-2 hover:text-mcl-orange"
-        >Zarejestruj się</router-link
+        >Register</router-link
       >
     </div>
   </div>

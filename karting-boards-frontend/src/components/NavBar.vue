@@ -54,6 +54,7 @@ export default {
               @mouseleave="showUserMenu = false"
               >{{ url.name }}</NavBarItem
             >
+            <NavBarItem v-if="url.id === 'logout'" @click=logout()>{{ url.name }}</NavBarItem>
             <NavBarItem v-else :url="url.url">{{ url.name }}</NavBarItem>
             <div
               v-if="url.id === 'user'"
@@ -115,7 +116,8 @@ export default {
       ],
       loggedUrls: [
         { id: 'profile', name: 'Profile', url: '/user' },
-        { id: 'logout', name: 'Log Out'},
+        { id: 'addLaptime', name: 'Add Lap Time', url: '/laptime' },
+        { id: 'logout', name: 'Log Out' }
       ],
       showUserMenu: false,
       userRole: null
