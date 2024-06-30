@@ -63,15 +63,15 @@ export default {
               @mouseover="showUserMenu = true"
               @mouseleave="showUserMenu = false"
             >
-              <router-link to="/user/profil">Profil</router-link>
+              <router-link to="/user/profile">Profile</router-link>
               <router-link to="/user/samochody">Samochody</router-link>
-              <router-link to="/user/rezerwacje">Rezerwacje</router-link>
-              <router-link
+              <router-link to="/laptime">Add Lap Time</router-link>
+              <!-- <router-link
                 v-if="userRole === 'ADMIN' || userRole === 'EMPLOYEE'"
                 to="/user/kalendarz"
                 >Kalendarz</router-link
-              >
-              <router-link to="" @click="logout()">Wyloguj</router-link>
+              > -->
+              <router-link to="" @click="logout()">Log Out</router-link>
             </div>
           </li>
         </ul>
@@ -86,10 +86,8 @@ export default {
           </li>
         </ul>
         <ul v-else class="flex flex-col pl-10 pt-10 font-medium text-white">
-          <router-link to="/user/profil">Profil</router-link>
-          <router-link to="/user/samochody">Samochody</router-link>
-          <router-link to="/user/rezerwacje">Rezerwacje</router-link>
-          <router-link to="" @click="logout()">Wyloguj</router-link>
+          <router-link to="/laptime">Add Lap Time</router-link>
+          <router-link to="" @click="logout()">Log Out</router-link>
         </ul>
       </div>
     </div>
@@ -115,7 +113,7 @@ export default {
         { id: 'login', name: 'Log In', url: '/login' },
       ],
       loggedUrls: [
-        { id: 'profile', name: 'Profile', url: '/user' },
+        // { id: 'profile', name: 'Profile', url: '/user' },
         { id: 'addLaptime', name: 'Add Lap Time', url: '/laptime' },
         { id: 'logout', name: 'Log Out' }
       ],

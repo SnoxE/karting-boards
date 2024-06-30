@@ -1,13 +1,13 @@
 <template>
   <div class="flex flex-col justify-center text-white">
     <div class="mx-auto mt-10 flex pt-6 text-2xl">
-      <span>Add your best laptime!</span>
+      <span>Add a new session</span>
     </div>
     <div class="mx-auto mt-4 flex flex-col">
       <form
         method="post"
         class="login-form z-2 mx-auto flex w-80 flex-col p-6"
-        @submit.prevent="addLapTime"
+        @submit.prevent="addSession"
       >
         <div class="mx-auto my-2 flex w-full flex-col gap-2">
           <select
@@ -96,20 +96,7 @@ export default {
         this.trackIdList.push(track)
       });
     },
-    async fetchSessions(trackId) {
-      console.log(trackId);
-      if (trackId) {
-        const response = await axios.get('api/session/' + trackId)
-        console.log(response);
-        const sessionList = response.data['content']
-
-        console.log(sessionList);
-        sessionList.forEach((session) => {
-          this.sessionIdList.push(session)
-        });
-      }
-    },
-    async addLapTime() {
+    async addSession() {
         console.log(this.trackId, this.sessionId, this.driverId, this.time);
 
       const response = await axios.post('api/laptime', {
