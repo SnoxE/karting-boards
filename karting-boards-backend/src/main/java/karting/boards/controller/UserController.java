@@ -17,8 +17,6 @@ public class UserController {
 
     private final DriverService driverService;
 
-//  private final PasswordEncoder passwordEncoder;
-
     public UserController(DriverService driverService) {
         this.driverService = driverService;
     }
@@ -36,63 +34,4 @@ public class UserController {
     public DriverDto getLoggedDriver(Principal principal) {
         return driverService.getDriverByEmail(principal);
     }
-
-    //    @PostMapping("/{userId}/add-car")
-    //    public ResponseEntity<ResponseDto> addCar(
-    //            @PathVariable("userId") String userId,
-    //            @RequestBody CarDto carDto) {
-    //        carService.addCar(
-    //                Integer.parseInt(userId),
-    //                carDto.make(),
-    //                carDto.model(),
-    //                carDto.productionYear(),
-    //                carDto.size(),
-    //                carDto.colour());
-    //
-    //        return ResponseEntity.ok().build();
-    //    }
-    //
-    //    @PutMapping("/{userId}/change-password")
-    //    public ResponseEntity<ResponseDto> changePassword(
-    //            @PathVariable("userId") String userId,
-    //            @RequestBody PasswordDto passwordDto) {
-    //        String oldPassword = userService.getPasswordByUserId(Integer.parseInt(userId));
-    //        if (!Objects.equals(oldPassword, passwordEncoder.encode(passwordDto.oldPassword()))) {
-    //            return ResponseEntity.badRequest().build();
-    //        } else if (Objects.equals(oldPassword,
-    // passwordEncoder.encode(passwordDto.newPassword()))) {
-    //            return ResponseEntity.badRequest().build();
-    //        } else {
-    //            userService.changePassword(
-    //                Integer.parseInt(userId),
-    //                passwordEncoder.encode(passwordDto.newPassword()));
-    //        }
-    //
-    //        return ResponseEntity.ok().build();
-    //    }
-
-    //
-    //    @GetMapping("/email")
-    //    public int getUserCountByEmail(@RequestParam("email") String email) {
-    //        return userService.getUserCountByEmail(email);
-    //    }
-
-    //    @GetMapping("/{userId}/cars")
-    //    public ContentDto<CarDto> getUserCars(@PathVariable("userId") String userId) {
-    //        return carService.getUserCars(userId);
-    //    }
-
-    //    @DeleteMapping("/{userId}/delete-car/{carId}")
-    //    public ResponseEntity<ResponseDto> deleteCar(
-    //            @PathVariable("userId") String userId,
-    //            @PathVariable("carId") String carId) {
-    //        carService.deleteCar(Integer.parseInt(userId), Integer.parseInt(carId));
-    //        return ResponseEntity.ok().build();
-    //    }
-    //
-    //    @GetMapping("/{userId}/reservations")
-    //    public ContentDto<ReservationDto> getUserReservations(@PathVariable("userId") String userId)
-    // {
-    //        return reservationService.getUserReservations(userId);
-    //    }
 }

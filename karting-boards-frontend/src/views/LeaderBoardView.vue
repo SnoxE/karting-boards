@@ -7,7 +7,7 @@
 
 <script>
 import SeparatorComp from '@/components/SeparatorComp.vue'
-import LeaderBoard from '../components/LeaderBoard.vue'
+import LeaderBoard from '@/components/LeaderBoard.vue'
 
 
 export default {
