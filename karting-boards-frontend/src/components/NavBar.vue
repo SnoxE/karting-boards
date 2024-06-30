@@ -111,28 +111,11 @@ export default {
   data() {
     return {
       urls: [
-        { id: 'about', name: 'O nas', url: '/' },
-        { id: 'oferta', name: 'Oferta', url: '/oferta' },
-        { id: 'reserve', name: 'Rezerwuj', url: '/rezerwuj' },
-        { id: 'login', name: 'Zaloguj', url: '/login' },
-        { id: 'register', name: 'Zarejestruj', url: '/rejestracja' }
+        { id: 'login', name: 'Log In', url: '/login' },
       ],
       loggedUrls: [
-        { id: 'about', name: 'O nas', url: '/' },
-        { id: 'oferta', name: 'Oferta', url: '/oferta' },
-        { id: 'reserve', name: 'Rezerwuj', url: '/rezerwuj' },
-        {
-          id: 'user',
-          name: 'USER',
-          url: '/',
-          children: [
-            { id: 'profile', name: 'Profil', url: '/' },
-            { id: 'orders', name: 'Rezerwacje', url: '/user/rezerwacje' },
-            { id: 'cars', name: 'Samochody', url: '/user/cars' },
-            { id: 'calendar', name: 'Kalendarz', url: '/user/kalendarz' }
-            // { id: 'logout', name: 'Wyloguj', url: '/' },
-          ]
-        }
+        { id: 'profile', name: 'Profile', url: '/user' },
+        { id: 'logout', name: 'Log Out'},
       ],
       showUserMenu: false,
       userRole: null
