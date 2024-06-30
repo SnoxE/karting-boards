@@ -29,7 +29,7 @@
 import axios from 'axios'
 
 export default {
-  name: "LeaderBoard",
+  name: 'LeaderBoard',
   data() {
     return {
       columnNames: [
