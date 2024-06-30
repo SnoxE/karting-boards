@@ -5,15 +5,15 @@
       <p class="text-xl text-gray-600 mt-4">Check the latest times to beat!</p>
     </section>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-4xl">
-      <div 
+      <router-link 
         v-for="track in tracks" 
         :key="track.id" 
+        :to='`/tracks/${track.id}/leaderboard`'
         class="bg-mcl-orange shadow-md rounded-lg p-4 hover:bg-gray-800 cursor-pointer flex flex-col"
-        @click="handleTrackClick(track)"
       >
         <h2 class="text-xl font-bold mt-2">{{ track.name }}</h2>
         <p class="text-gray-700">{{ track.city }}</p>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

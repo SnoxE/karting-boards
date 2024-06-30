@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     async fetchLeaderboard() {
-      const response = await axios.get('api/tracks/wrt.karting/leaderboard')
+      const response = await axios.get('api/tracks/' + this.$route.params.id + '/leaderboard')
       const laptimeList = response.data['content']
 
       laptimeList.forEach((laptime) => {
