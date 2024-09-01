@@ -1,19 +1,19 @@
 <template>
   <div class="bg-dark-mode-gray min-h-screen">
     <SeparatorComp />
-    <LeaderBoard />
+    <LeaderBoards />
   </div>
 </template>
 
 <script>
 import SeparatorComp from '@/components/SeparatorComp.vue'
-import LeaderBoard from '@/components/LeaderBoard.vue'
+import LeaderBoards from '@/components/LeaderBoards.vue'
 
 
 export default {
   name: 'LeaderBoardView',
   components: {
-    LeaderBoard,
+    LeaderBoards,
     SeparatorComp
   }
 }

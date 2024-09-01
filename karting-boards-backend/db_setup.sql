@@ -43,6 +43,8 @@ CREATE TABLE laptime
     FOREIGN KEY (driver_id) REFERENCES driver (id)
 );
 
+
+
 insert into track (ID, name, street, street_no, city, post_code, configuration, length)
 values ('wrt.karting', 'WRT Karting', 'Kornela Makuszyńskiego', '30', '31-752', 'Kraków', 1, 300);
 insert into track (ID, name, street, street_no, city, post_code)
